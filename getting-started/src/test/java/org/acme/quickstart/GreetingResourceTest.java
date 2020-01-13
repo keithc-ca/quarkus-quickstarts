@@ -31,4 +31,13 @@ public class GreetingResourceTest {
                 .body(is("hello " + uuid));
     }
 
+    @Test
+    public void testLogManager() {
+        given()
+                .when().get("/hello/logmanager")
+                .then()
+                .statusCode(200)
+                .body(is("LogManager is org.jboss.logmanager.LogManager"));
+    }
+
 }

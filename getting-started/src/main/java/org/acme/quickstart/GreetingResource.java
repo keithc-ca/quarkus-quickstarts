@@ -1,6 +1,5 @@
 package org.acme.quickstart;
 
-
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -27,4 +26,12 @@ public class GreetingResource {
     public String hello() {
         return "hello";
     }
+
+    @GET
+    @Path("/logmanager")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String logmanager() {
+        return "LogManager is " + java.util.logging.LogManager.getLogManager().getClass().getName();
+    }
+
 }
